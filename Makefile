@@ -27,7 +27,7 @@ BINARIES_ROOT = $(PROGRAMS_ROOT:.cc=)
 all: $(BINARIES) $(BINARIES_ROOT)
 
 $(BINARIES): % : %.o $(OFILES); g++ $(LINKFLAGS) -o $@ $^ $(LIBS)
-$(BINARIES_ROOT): % : %.o $(OFILES) $(OFILES_ROOT); g++ -v $(LINKFLAGS) -o $@ $^ $(LIBS) $(LROOT)
+$(BINARIES_ROOT): % : %.o $(OFILES) $(OFILES_ROOT); g++ $(LINKFLAGS) -o $@ $^ $(LIBS) $(LROOT)
 
 
 clean:
